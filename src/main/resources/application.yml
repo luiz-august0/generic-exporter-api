@@ -1,0 +1,44 @@
+app:
+  name: Generic Exporter API Service
+  description: "Generic Exporter API Service"
+  version: "1.0.0"
+  base-path: /api
+
+api:
+  prefix.v1: ${app.base-path}/v1
+
+spring:
+  application.name: ${app.name}
+  data.rest.base-path: ${app.base-path}
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+  http2:
+    enabled: true
+  compression:
+    enabled: true
+    min-response-size: 1
+    mime-types: text/html,
+      text/xml,
+      text/plain,
+      text/css,
+      text/javascript,
+      application/javascript,
+      application/json,
+      application/xml,
+      application/pdf,
+      image/png,
+      image/jpeg,
+      image/svg+xml
+
+logging:
+  level:
+    root: 'INFO'
+    org.hibernate.type.descriptor.sql.BasicBinder: 'TRACE'
+    org.hibernate.type.descriptor.sql.BasicExtractor: 'OFF'
+    org.springframework.web.servlet.DispatcherServlet: 'DEBUG'
+    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: 'DEBUG'
+
+---
