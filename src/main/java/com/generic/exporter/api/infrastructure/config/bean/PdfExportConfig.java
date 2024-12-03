@@ -15,7 +15,7 @@ public class PdfExportConfig {
     }
 
     @Bean
-    PdfExportGateway exportGateway() {
+    PdfExportGateway pdfExportGateway() {
         return new PdfExportGatewayImpl();
     }
 
